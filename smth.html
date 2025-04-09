@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kazakh Style Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefcf8;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #027b4a;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffc107;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Kazakhstan_Landscape.jpg/1280px-Kazakhstan_Landscape.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-shadow: 0 0 10px black;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .scroll-btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      font-size: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .scroll-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .photo-cell {
+      flex: 1 1 calc(50% - 20px);
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .photo-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .video-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #fff3cd;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .video-section video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .about-section {
+      padding: 4rem 2rem;
+      background-color: #e0f2f1;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 4rem;
+    }
+
+    .member {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .roles {
+      margin-top: 3rem;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    h2, h3 {
+      color: #027b4a;
+    }
+
+    /* ---------- Адаптив ---------- */
+    @media (max-width: 768px) {
+      .photo-cell {
+        flex: 1 1 100%;
+        height: 200px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.5rem;
+      }
+
+      .member {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .scroll-btn {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .scroll-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kazakh Style Project</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home" data-aos="fade-up">
+    <h2>Welcome to our project!</h2>
+    <button class="scroll-btn" onclick="document.getElementById('video').scrollIntoView({behavior: 'smooth'})">
+      Watch Video
+    </button>
+
+    <div class="photo-grid">
+      <div class="photo-cell">
+        <img src="assets/img/team1.jpg" alt="Photo 1">
+      </div>
+      <div class="photo-cell">
+        <img src="assets/img/stm.jpg" alt="Photo 2">
+      </div>
+      <div class="photo-cell">
+        <img src="assets/img/sss.jpg" alt="Photo 3">
+      </div>
+      <div class="photo-cell">
+        <img src="assets/img/team2.jpg" alt="Photo 4">
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" id="video" data-aos="fade-up">
+    <h2>Project Video</h2>
+    <video controls>
+      <source src="assets/vidio/IMG_8983_1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="about-section" id="about" data-aos="fade-up">
+    <h2>About Us</h2>
+    <div class="team" data-aos="fade-up">
+      <div class="member" data-aos="zoom-in">
+        <img src="assets/img/member1.jpg" alt="Member 1" />
+        <h3>Ildar</h3>
+        <p>Producers & scriptwriting</p>
+      </div>
+      <div class="member" data-aos="zoom-in">
+        <img src="assets/img/member2.jpg" alt="Member 2" />
+        <h3>Zhahangir</h3>
+        <p>Producers & Researcher</p>
+      </div>
+      <div class="member" data-aos="zoom-in">
+        <img src="assets//img/member3.jpg" alt="Member 3" />
+        <h3>Akadil</h3>
+        <p>Design & Creative Director</p>
+      </div>
+      <div class="member" data-aos="zoom-in">
+        <img src="assets/img/member4.jpg" alt="Member 4" />
+        <h3>Erasyl</h3>
+        <p>Text Writing & scriptwriting</p>
+      </div>
+      <div class="member" data-aos="zoom-in">
+        <img src="assets/img/member5.jpg" alt="Member 5" />
+        <h3>Maden</h3>
+        <p>Filming & Video editing</p>
+      </div>
+    </div>
+
+    <div class="roles">
+      <h3>Roles in the Project:</h3>
+      <ul>
+        <li>Ildar — History is the teacher of life.</li>
+        <li>Zhahangir — Those who cannot remember the past are condemned to repeat it.</li>
+        <li>Akadil — History is written by the victors.</li>
+        <li>Erasyl — The past is never dead. It's not even past.</li>
+        <li>Maden — We are freed by knowledge of our history.</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    AOS.init({
+      offset: 200,
+      duration: 1200,
+      easing: 'ease-in-out',
+    });
+  </script>
+</body>
+</html>
